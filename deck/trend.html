@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Public+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .slide-container { 
+      width: 1280px; 
+      min-height: 720px; 
+      background: #FCFCFC; 
+      display: flex; 
+      flex-direction: column; 
+      border-top: 4px solid #1A2F4C;
+      font-family: 'Public Sans', sans-serif;
+      color: #182230;
+    }
+    .header { padding: 40px 40px 10px 40px; }
+    h2 { font-family: 'Merriweather', serif; font-size: 28px; color: #1A2F4C; margin-bottom: 0; }
+    .content-zone { flex: 1; padding: 20px 40px; display: flex; flex-direction: column; }
+    .chart-container { width: 100%; height: 420px; position: relative; margin-bottom: 30px; }
+    .insight-box { background: #F1F4F7; padding: 24px; border-left: 4px solid #C13832; display: flex; gap: 40px; align-items: center; }
+    .insight-item { flex: 1; }
+    .metric { font-size: 32px; font-weight: 700; color: #C13832; display: block; }
+    .metric-label { font-size: 14px; color: #64748B; text-transform: uppercase; letter-spacing: 1px; }
+    .footer { height: 60px; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; color: #64748B; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>The COVID shock dominates the time series</h2>
+    </div>
+    <div class="content-zone">
+      <div class="chart-container">
+        <canvas id="trendChart"></canvas>
+      </div>
+      <div class="insight-box">
+        <div class="insight-item">
+          <span class="metric">24.88%</span>
+          <span class="metric-label">National Peak (May 2020)</span>
+        </div>
+        <div class="insight-item">
+          <p style="font-size: 18px; line-height: 1.5;">The national average surged in April 2020 as lockdown measures took effect, peaking in May before a slight correction in June. The transition from a stable 9% baseline to 24% occurs in just 60 days.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div>Source: India Unemployment Dataset (May 2019 – June 2020)</div>
+      <div>Slide 3</div>
+    </div>
+  </div>
+  <script>
+    const ctx = document.getElementById('trendChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['May-19', 'Jun-19', 'Jul-19', 'Aug-19', 'Sep-19', 'Oct-19', 'Nov-19', 'Dec-19', 'Jan-20', 'Feb-20', 'Mar-20', 'Apr-20', 'May-20', 'Jun-20'],
+        datasets: [{
+          label: 'National Average',
+          data: [8.89, 9.38, 9.07, 9.64, 9.05, 9.90, 9.86, 9.53, 9.96, 9.96, 10.70, 23.64, 24.88, 11.90],
+          borderColor: '#1A2F4C',
+          backgroundColor: '#1A2F4C',
+          borderWidth: 4,
+          pointRadius: 6,
+          pointBackgroundColor: '#1A2F4C',
+          tension: 0.1
+        }, {
+          label: 'COVID Shock Period',
+          data: [null, null, null, null, null, null, null, null, null, null, 10.70, 23.64, 24.88, 11.90],
+          borderColor: '#C13832',
+          borderWidth: 0,
+          fill: true,
+          backgroundColor: 'rgba(193, 56, 50, 0.1)',
+          pointRadius: 0
+        }]
+      },
+      options: {
+        animation: false,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          y: { 
+            beginAtZero: true, 
+            grid: { color: '#E2E8F0' },
+            title: { display: true, text: 'Unemployment Rate (%)', font: { size: 14 } }
+          },
+          x: { grid: { display: false } }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

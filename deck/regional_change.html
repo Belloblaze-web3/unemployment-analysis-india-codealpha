@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Public+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .slide-container { 
+      width: 1280px; 
+      min-height: 720px; 
+      background: #FCFCFC; 
+      display: flex; 
+      flex-direction: column; 
+      border-top: 4px solid #1A2F4C;
+      font-family: 'Public Sans', sans-serif;
+      color: #182230;
+    }
+    .header { padding: 40px 40px 10px 40px; }
+    h2 { font-family: 'Merriweather', serif; font-size: 28px; color: #1A2F4C; margin-bottom: 0; }
+    .content-zone { flex: 1; padding: 20px 40px; display: grid; grid-template-columns: 3fr 2fr; gap: 40px; }
+    .chart-box { height: 500px; position: relative; }
+    .insight-card { background: #F1F4F7; padding: 32px; border-left: 4px solid #C13832; height: fit-content; }
+    .footer { height: 60px; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; color: #64748B; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>COVID effects were uneven across regions</h2>
+    </div>
+    <div class="content-zone">
+      <div class="chart-box">
+        <canvas id="changeChart"></canvas>
+      </div>
+      <div>
+        <div class="insight-card">
+          <p style="font-family: 'Merriweather', serif; font-size: 20px; margin-bottom: 20px; color: #1A2F4C;">Geographic Variance</p>
+          <ul style="font-size: 16px; line-height: 1.6; list-style-type: none;">
+            <li style="margin-bottom: 16px;"><strong>Extreme Shock:</strong> Puducherry and Tamil Nadu saw average rate increases of <strong>20-35 percentage points</strong>, reflecting direct exposure to lockdown intensity.</li>
+            <li style="margin-bottom: 16px;"><strong>Resilience:</strong> Jammu & Kashmir and Tripura actually saw slight decreases in their average rates during this specific window, suggesting different local economic drivers or data reporting lags.</li>
+            <li><strong>Broad Stress:</strong> The majority of regions (24 of 28) saw an absolute increase in average unemployment.</li>
+          </ul>
+        </div>
+        <div style="margin-top: 40px; padding: 24px; border-left: 4px solid #2A7079; background: #F1F4F7;">
+          <p style="font-size: 16px; line-height: 1.5;">This uneven impact confirms that <strong>tailored regional responses</strong> are more efficient than uniform national policies.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div>Source: India Unemployment Dataset (May 2019 – June 2020)</div>
+      <div>Slide 6</div>
+    </div>
+  </div>
+  <script>
+    const ctx = document.getElementById('changeChart').getContext('2d');
+    const data = [37.3, 22.7, 22.2, 17.8, 12.1, 11.8, 10.9, 10.8, 9.3, 8.6, 8.0, 7.9, 7.7, 7.6, 6.7, 5.5, 5.4, 5.3, 4.9, 4.6, 3.7, 3.2, 3.0, 2.7, 0.2, -1.9, -1.9, -2.1, -4.3];
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Puducherry', 'Tamil Nadu', 'Jharkhand', 'Bihar', 'Karnataka', 'Haryana', 'Kerala', 'Telangana', 'Madhya Pradesh', 'Andhra Pradesh', 'Delhi', 'Odisha', 'Maharashtra', 'Uttar Pradesh', 'West Bengal', 'Chhattisgarh', 'Gujarat', 'Goa', 'Rajasthan', 'Punjab', 'Meghalaya', 'Uttarakhand', 'Sikkim', 'Assam', 'Chandigarh', 'Himachal Pradesh', 'Tripura', 'Jammu & Kashmir'],
+        datasets: [{
+          data: [37.3, 22.7, 22.2, 17.8, 12.1, 11.8, 10.9, 10.8, 9.3, 8.6, 8.0, 7.9, 7.7, 7.6, 6.7, 5.5, 5.4, 5.3, 4.9, 4.6, 3.7, 3.2, 3.0, 2.7, 0.2, -1.9, -1.9, -2.1, -4.3],
+          backgroundColor: data.map(v => v < 0 ? '#2563EB' : '#DC2626'),
+          indexAxis: 'y'
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        animation: false,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { 
+            grid: { color: '#E2E8F0' }, 
+            title: { display: true, text: 'Change (Percentage Points)' },
+            suggestedMin: -5,
+            suggestedMax: 40
+          },
+          y: { grid: { display: false }, ticks: { font: { size: 10 } } }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

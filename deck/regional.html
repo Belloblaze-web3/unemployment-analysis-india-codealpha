@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Public+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .slide-container { 
+      width: 1280px; 
+      min-height: 720px; 
+      background: #FCFCFC; 
+      display: flex; 
+      flex-direction: column; 
+      border-top: 4px solid #1A2F4C;
+      font-family: 'Public Sans', sans-serif;
+      color: #182230;
+    }
+    .header { padding: 40px 40px 10px 40px; }
+    h2 { font-family: 'Merriweather', serif; font-size: 28px; color: #1A2F4C; margin-bottom: 0; }
+    .content-zone { flex: 1; padding: 20px 40px; display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
+    .table-container { height: 500px; overflow-y: hidden; }
+    .rank-table { width: 100%; border-collapse: collapse; }
+    .rank-table th { background: #1A2F4C; color: white; text-align: left; padding: 12px; position: sticky; top: 0; font-size: 16px; }
+    .rank-table td { padding: 8px 12px; border-bottom: 1px solid #E2E8F0; font-size: 15px; }
+    .rank-table tr:nth-child(even) td { background: #F1F4F7; }
+    .rank-table tr.high-stress td { font-weight: 700; color: #C13832; }
+    .highlight-card { background: #F1F4F7; padding: 32px; border-left: 4px solid #2A7079; height: fit-content; }
+    .footer { height: 60px; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; color: #64748B; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>Regional averages hide a wide spread</h2>
+    </div>
+    <div class="content-zone">
+      <div class="table-container">
+        <table class="rank-table">
+          <thead>
+            <tr>
+              <th>Region</th>
+              <th>Avg Rate (%)</th>
+              <th>Peak Rate (%)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="high-stress"><td>Tripura</td><td>28.35</td><td>43.64</td></tr>
+            <tr class="high-stress"><td>Haryana</td><td>26.28</td><td>46.89</td></tr>
+            <tr class="high-stress"><td>Jharkhand</td><td>20.58</td><td>61.48</td></tr>
+            <tr class="high-stress"><td>Bihar</td><td>18.92</td><td>58.77</td></tr>
+            <tr class="high-stress"><td>Himachal Pradesh</td><td>18.54</td><td>50.00</td></tr>
+            <tr><td>Delhi</td><td>16.50</td><td>45.78</td></tr>
+            <tr><td>Jammu & Kashmir</td><td>16.19</td><td>24.06</td></tr>
+            <tr><td>Chandigarh</td><td>15.99</td><td>22.03</td></tr>
+            <tr><td>Rajasthan</td><td>14.06</td><td>24.15</td></tr>
+            <tr><td>Uttar Pradesh</td><td>12.55</td><td>26.43</td></tr>
+            <tr><td>Punjab</td><td>12.03</td><td>28.33</td></tr>
+            <tr><td>Puducherry</td><td>10.22</td><td>76.74</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size: 12px; color: #64748B; margin-top: 8px;">*Top 12 regions sorted by average rate.</p>
+      </div>
+      <div>
+        <div class="highlight-card">
+          <p style="font-family: 'Merriweather', serif; font-size: 20px; margin-bottom: 16px;">Key observation</p>
+          <p style="font-size: 16px; line-height: 1.6; color: #182230;">National unemployment is a composition of vastly different regional outcomes. The top five regions averaged <strong>18.5% to 28.4%</strong>, while regions like Meghalaya (4.8%) and Odisha (5.6%) maintained significantly lower averages throughout the period.</p>
+        </div>
+        <div style="margin-top: 30px; padding: 24px; border-left: 4px solid #C13832; background: rgba(193, 56, 50, 0.05);">
+          <p style="font-size: 16px; font-weight: 700; color: #C13832;">Extreme Outlier:</p>
+          <p style="font-size: 15px; line-height: 1.5;">Puducherry recorded a <strong>76.7% peak</strong> during the COVID shock, illustrating how specific territories experienced complete labour-market shutdowns.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div>Source: India Unemployment Dataset (May 2019 – June 2020)</div>
+      <div>Slide 5</div>
+    </div>
+  </div>
+</body>
+</html>

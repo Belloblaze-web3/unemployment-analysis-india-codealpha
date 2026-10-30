@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Public+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .slide-container { 
+      width: 1280px; 
+      min-height: 720px; 
+      background: #FCFCFC; 
+      display: flex; 
+      flex-direction: column; 
+      border-top: 4px solid #1A2F4C;
+      font-family: 'Public Sans', sans-serif;
+      color: #182230;
+    }
+    .header { padding: 40px 40px 10px 40px; }
+    h2 { font-family: 'Merriweather', serif; font-size: 28px; color: #1A2F4C; margin-bottom: 0; }
+    .content-zone { flex: 1; padding: 20px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+    .summary-block { border-left: 4px solid #1A2F4C; padding-left: 28px; height: 100%; }
+    .summary-block h3 { font-family: 'Merriweather', serif; font-size: 22px; margin-bottom: 24px; }
+    .summary-list { list-style: none; }
+    .summary-list li { margin-bottom: 20px; font-size: 18px; line-height: 1.5; }
+    .summary-list li strong { color: #C13832; }
+    .next-steps { background: #F1F4F7; padding: 32px; border-left: 4px solid #2A7079; }
+    .footer { height: 60px; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; color: #64748B; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>Takeaways and next steps</h2>
+    </div>
+    <div class="content-zone">
+      <div class="summary-block">
+        <h3>Final assessment</h3>
+        <ul class="summary-list">
+          <li><strong>Structural Shock:</strong> National average unemployment surged <strong>+86.9%</strong> during the initial COVID shock, peaking in May 2020.</li>
+          <li><strong>Dual Sector Stress:</strong> Rural unemployment nearly doubled relative to its baseline, while urban areas faced high absolute levels (19.3%).</li>
+          <li><strong>Regional spread:</strong> A wide variance from Tripura (28.4% avg) to Meghalaya (4.8% avg) confirms that national averages mask local stress.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="next-steps">
+          <p style="font-family: 'Merriweather', serif; font-size: 22px; margin-bottom: 24px; color: #1A2F4C;">Next steps</p>
+          <ul class="summary-list" style="margin-bottom: 0;">
+            <li>1. Extend dataset through 2021 to assess the full recovery trajectory.</li>
+            <li>2. Correlate findings with sector-specific GDP data by region.</li>
+            <li>3. Incorporate wage and inflation data for a real-income analysis.</li>
+          </ul>
+        </div>
+        <div style="margin-top: 60px; border-top: 1px solid #E2E8F0; padding-top: 30px; text-align: center;">
+          <p style="font-family: 'Merriweather', serif; font-size: 24px; color: #1A2F4C;">Muhammad Bello Abdussalam</p>
+          <p style="font-size: 16px; color: #64748B; margin-top: 4px;">Data Science Intern | CodeAlpha Task 2</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div>Source: India Unemployment Dataset (May 2019 – June 2020)</div>
+      <div>Slide 8</div>
+    </div>
+  </div>
+</body>
+</html>

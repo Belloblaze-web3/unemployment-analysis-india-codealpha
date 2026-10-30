@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Public+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .slide-container { 
+      width: 1280px; 
+      min-height: 720px; 
+      background: #FCFCFC; 
+      display: flex; 
+      flex-direction: column; 
+      border-top: 4px solid #1A2F4C;
+      font-family: 'Public Sans', sans-serif;
+      color: #182230;
+    }
+    .header { padding: 40px 40px 10px 40px; }
+    h2 { font-family: 'Merriweather', serif; font-size: 28px; color: #1A2F4C; margin-bottom: 0; }
+    .content-zone { flex: 1; padding: 20px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+    .policy-card { background: #F1F4F7; padding: 28px; border-top: 4px solid #1A2F4C; height: 100%; }
+    .policy-card h3 { font-family: 'Merriweather', serif; font-size: 20px; color: #1A2F4C; margin-bottom: 12px; }
+    .policy-card p { font-size: 16px; line-height: 1.5; color: #182230; }
+    .footer { height: 60px; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; color: #64748B; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>What the evidence suggests for policy</h2>
+    </div>
+    <div class="content-zone">
+      <div class="policy-card">
+        <h3>1. Target by geographic stress</h3>
+        <p>Resource allocation for unemployment insurance and public works should prioritize high-average and high-increase regions. A blanket national strategy misses the intensity of the shock in states like Jharkhand, Bihar, and Tamil Nadu.</p>
+      </div>
+      <div class="policy-card" style="border-top-color: #2A7079;">
+        <h3>2. Differentiate urban vs. rural</h3>
+        <p>Rural areas saw a near 100% surge in unemployment, while urban areas faced higher absolute levels but slightly lower relative increases. Recovery strategies must address the distinct transmission mechanisms in both sectors.</p>
+      </div>
+      <div class="policy-card" style="border-top-color: #C13832;">
+        <h3>3. Monitor participation flows</h3>
+        <p>Policy should monitor labour force participation alongside unemployment. A falling unemployment rate can be a false signal of recovery if it is driven by workers discouraged into permanent exit from the labour market.</p>
+      </div>
+      <div class="policy-card" style="border-top-color: #64748B;">
+        <h3>4. Invest in high-frequency data</h3>
+        <p>The speed of the COVID shock (baseline to peak in 60 days) demonstrates the need for monthly regional monitoring. Annual or quarterly national statistics are too slow for emergency labor-market management.</p>
+      </div>
+    </div>
+    <div class="footer">
+      <div>Source: India Unemployment Dataset (May 2019 – June 2020)</div>
+      <div>Slide 7</div>
+    </div>
+  </div>
+</body>
+</html>

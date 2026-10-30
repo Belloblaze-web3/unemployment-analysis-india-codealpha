@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Public+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    .slide-container { 
+      width: 1280px; 
+      min-height: 720px; 
+      background: #FCFCFC; 
+      display: flex; 
+      flex-direction: column; 
+      border-top: 4px solid #1A2F4C;
+      font-family: 'Public Sans', sans-serif;
+      color: #182230;
+    }
+    .header { padding: 40px 40px 10px 40px; }
+    h2 { font-family: 'Merriweather', serif; font-size: 28px; color: #1A2F4C; margin-bottom: 0; }
+    .content-zone { flex: 1; padding: 20px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+    .chart-box { height: 400px; display: flex; flex-direction: column; }
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+    .stat-card { background: #F1F4F7; padding: 20px; border-top: 4px solid #1A2F4C; }
+    .stat-card.urban { border-color: #F97316; }
+    .stat-card.rural { border-color: #2563EB; }
+    .stat-val { font-size: 28px; font-weight: 700; display: block; margin-bottom: 4px; }
+    .stat-label { font-size: 14px; color: #64748B; text-transform: uppercase; letter-spacing: 1px; }
+    .footer { height: 60px; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; color: #64748B; }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="header">
+      <h2>Average unemployment rose 86.9%</h2>
+    </div>
+    <div class="content-zone">
+      <div class="chart-box">
+        <p style="font-weight: 700; margin-bottom: 16px; font-size: 18px;">Pre-COVID vs. Shock Period Average</p>
+        <div style="flex: 1;"><canvas id="comparisonChart"></canvas></div>
+      </div>
+      <div>
+        <p style="font-weight: 700; margin-bottom: 16px; font-size: 18px;">Area-specific performance</p>
+        <div class="stats-grid">
+          <div class="stat-card urban">
+            <span class="stat-val" style="color: #F97316;">+77.8%</span>
+            <span class="stat-label">Urban Increase</span>
+            <p style="font-size: 14px; margin-top: 8px;">Baseline: 10.8%<br>Shock: 19.3%</p>
+          </div>
+          <div class="stat-card rural">
+            <span class="stat-val" style="color: #2563EB;">+99.9%</span>
+            <span class="stat-label">Rural Increase</span>
+            <p style="font-size: 14px; margin-top: 8px;">Baseline: 8.1%<br>Shock: 16.2%</p>
+          </div>
+        </div>
+        <div style="margin-top: 40px; border-left: 4px solid #C13832; padding-left: 20px;">
+          <p style="font-size: 18px; line-height: 1.5;">Rural areas experienced a higher relative surge in unemployment (+99.9% vs +77.8% in urban zones), highlighting a widespread geographic shock that outpaced urban resilience.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div>Source: India Unemployment Dataset (May 2019 – June 2020)</div>
+      <div>Slide 4</div>
+    </div>
+  </div>
+  <script>
+    const ctx = document.getElementById('comparisonChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Pre-COVID (Baseline)', 'COVID Shock'],
+        datasets: [{
+          data: [9.51, 17.77],
+          backgroundColor: ['#94A3B8', '#DC2626'],
+          barThickness: 80
+        }]
+      },
+      options: {
+        animation: false,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          y: { 
+            beginAtZero: true, 
+            grid: { color: '#E2E8F0' },
+            title: { display: true, text: 'Average Rate (%)' }
+          },
+          x: { grid: { display: false } }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

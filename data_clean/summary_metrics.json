@@ -1,0 +1,19 @@
+{
+  "rows_after_cleaning": 740,
+  "regions": 28,
+  "date_start": "2019-05-31",
+  "date_end": "2020-06-30",
+  "pre_covid_average_rate": 9.51,
+  "covid_shock_average_rate": 17.77,
+  "covid_increase_percent": 86.9,
+  "peak_month": "2020-05",
+  "peak_month_average_rate": 24.88,
+  "highest_average_region": "Tripura",
+  "highest_average_region_rate": 28.35,
+  "urban_increase_percent": 77.8,
+  "rural_increase_percent": 99.9,
+  "urban_pre_covid_rate": 10.84,
+  "urban_covid_rate": 19.28,
+  "rural_pre_covid_rate": 8.09,
+  "rural_covid_rate": 16.18
+}
