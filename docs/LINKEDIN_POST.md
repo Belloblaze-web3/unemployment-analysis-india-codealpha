@@ -23,4 +23,9 @@ The results reinforce an important analytical lesson: national averages are usef
 
 The project includes a cleaned dataset, analysis notebook, visualizations, an executive report, and a reproducible Python pipeline.
 
+Explore the work:
+
+- GitHub repository: https://github.com/Belloblaze-web3/unemployment-analysis-india-codealpha
+- Kaggle notebook: https://www.kaggle.com/code/donblaze/unemployment-analysis-in-india-codealpha-task-2
+
 #Python #DataScience #Pandas #Matplotlib #ExploratoryDataAnalysis #Unemployment #COVID19 #CodeAlpha #Internship #DataVisualization
